@@ -19,7 +19,7 @@ jobs:
             docker-compose run dockerapp python test.py
 
 deployment:
-  hub: deployment
+  hub:
     # Esta sección nos permitirá saber que rama(s) activarán la instrucción de despliegue
     branch: [circle_ci_publish, master]
     # Lo primerp que se hace en está sección, es hacer login con nuestras credenciales de dockerhub
