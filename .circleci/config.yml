@@ -27,9 +27,9 @@ jobs:
             # este construye la imagen con el prefijo(nombre) predeterminado del directorio actual
             # la primera dockerapp es el nombre de nuestro directorio actual
             # el segundo dockerapp es el nombre del servicio que definimos en nuestro archivo docker-compose.yml
-            command: |
-              docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
-              docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
-              docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:latest
-              docker push $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
-              docker push $DOCKER_HUB_USER_ID/dockerapp:latest
+          command: |
+            docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
+            docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
+            docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:latest
+            docker push $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
+            docker push $DOCKER_HUB_USER_ID/dockerapp:latest
